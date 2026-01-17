@@ -1,0 +1,15 @@
+[project]
+name = "Kafka-Basic"
+version = "0.1.0"
+description = ""
+requires-python = ">=3.12,<4.0"
+
+dependencies = [
+    "kafka-python>=2.3.0",
+    "pydantic>=2.12.5",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "pipdeptree==2.26.1",
+]

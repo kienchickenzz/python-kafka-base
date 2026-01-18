@@ -10,7 +10,6 @@ Inheritance:
 - BaseEventPublisher: cung cấp publish() generic implementation
 - IEventPublisher: định nghĩa create_event() contract
 """
-import uuid
 from typing import Any
 
 from src.shared.base.BaseEventPublisher import BaseEventPublisher
@@ -69,26 +68,9 @@ class PredictionPublisher(BaseEventPublisher, IEventPublisher):
         Raises:
             ValueError: Nếu payload không hợp lệ
         """
-        # Validate model_name
         model_name = payload.get('model_name')
-        if not model_name:
-            raise ValueError("model_name is required in payload")
-        if not isinstance(model_name, str):
-            raise ValueError("model_name must be a string")
-
-        # Validate input_text
         input_text = payload.get('input_text')
-        if not input_text:
-            raise ValueError("input_text is required in payload")
-        if not isinstance(input_text, str):
-            raise ValueError("input_text must be a string")
-        if len(input_text) > 10000:
-            raise ValueError("input_text must be <= 10000 characters")
-
-        # Generate request_id nếu chưa có
         request_id = payload.get('request_id')
-        if not request_id:
-            request_id = f"pred-{uuid.uuid4().hex[:8]}"
 
         # Build event data
         event_data = {

@@ -18,7 +18,7 @@ class IEventPublisher(ABC):
     """Interface định nghĩa contract cho event creation."""
 
     @abstractmethod
-    def create_event(self, payload: dict[str, Any], key: str | None = None) -> None:
+    def create_event(self, payload: dict[str, Any]):
         """
         Tạo và publish event với domain-specific business logic.
 

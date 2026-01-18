@@ -54,7 +54,7 @@ class BaseEventPublisher:
         self._producer = producer
         self._serializer = serializer
 
-    def publish(self, topic: KafkaTopic, data: dict, key: str | None = None) -> None:
+    def publish(self, topic: KafkaTopic, data: dict) -> None:
         """
         Publish event data vào topic (CONCRETE implementation).
 
@@ -67,8 +67,7 @@ class BaseEventPublisher:
             key (str | None): Partition key (optional)
         """
         value = self._serializer.serialize(data)
-        key_bytes = key.encode() if key else None
-        self._producer.send(topic=topic.value, key=key_bytes, value=value)
+        self._producer.send(topic=topic.value, value=value)
 
     def flush(self, timeout: float | None = None) -> None:
         """

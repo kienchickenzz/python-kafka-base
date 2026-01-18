@@ -50,11 +50,7 @@ class PredictionPublisher(BaseEventPublisher, IEventPublisher):
     # __init__ inherited từ BaseEventPublisher
     # publish(), flush(), close() inherited từ BaseEventPublisher
 
-    def create_event(
-        self,
-        payload: dict[str, Any],
-        key: str | None = None,
-    ) -> None:
+    def create_event(self, payload: dict[str, Any]):
         """
         Tạo và publish prediction event với business logic.
 
@@ -80,5 +76,4 @@ class PredictionPublisher(BaseEventPublisher, IEventPublisher):
         }
 
         # Publish
-        partition_key = key or request_id
-        self.publish(self.topic, event_data, partition_key)
+        self.publish(self.topic, event_data)

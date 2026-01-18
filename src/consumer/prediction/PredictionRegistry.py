@@ -5,9 +5,9 @@ Trách nhiệm:
 - Định nghĩa handlers cho Prediction domain
 - Kế thừa BaseEventRegistry để quản lý polling (main + DLQ)
 """
-from src.shared.base.BaseEventRegistry import BaseEventRegistry
-from src.shared.interface.IEventHandler import IEventHandler
-from src.domains.prediction.consumer.handlers.PredictionHandler import PredictionHandler
+from src.consumer.shared.base.BaseEventRegistry import BaseEventRegistry
+from src.consumer.shared.interface.IEventHandler import IEventHandler
+from src.consumer.prediction.handler.PredictionHandler import PredictionHandler
 
 
 class PredictionRegistry(BaseEventRegistry):

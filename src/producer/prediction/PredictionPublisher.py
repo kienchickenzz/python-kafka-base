@@ -12,9 +12,9 @@ Inheritance:
 """
 from typing import Any
 
-from src.shared.base.BaseEventPublisher import BaseEventPublisher
-from src.shared.interface.IEventPublisher import IEventPublisher
-from src.domains.prediction.enum.PredictionTopics import PredictionTopics
+from src.producer.shared.base.BaseEventPublisher import BaseEventPublisher
+from src.producer.shared.interface.IEventPublisher import IEventPublisher
+from src.producer.prediction.enum.PredictionTopics import PredictionTopics
 
 
 class PredictionPublisher(BaseEventPublisher, IEventPublisher):

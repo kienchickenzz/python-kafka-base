@@ -1,7 +1,7 @@
 """
 PredictionGroups - Consumer groups cho Prediction domain
 """
-from src.shared.enum.ConsumerGroup import ConsumerGroup, BaseGroups
+from src.consumer.shared.enum.ConsumerGroup import ConsumerGroup, BaseGroups
 
 
 class PredictionGroups(BaseGroups):

@@ -8,10 +8,10 @@ Trách nhiệm:
 """
 from kafka import KafkaConsumer
 
-from src.infrastructure.KafkaConfig import KafkaConfig
+from src.consumer.infrastructure.KafkaConfig import KafkaConfig
 from src.shared.base.JsonSerializer import JsonSerializer
-from src.shared.interface.IEventHandler import IEventHandler
-from src.shared.interface.IDLQHandler import IDLQHandler
+from src.consumer.shared.interface.IEventHandler import IEventHandler
+from src.consumer.shared.interface.IDLQHandler import IDLQHandler
 
 
 class KafkaConsumerFactory:

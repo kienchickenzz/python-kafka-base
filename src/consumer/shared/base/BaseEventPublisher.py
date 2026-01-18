@@ -13,7 +13,7 @@ Note:
 """
 from kafka import KafkaProducer
 
-from src.shared.enum.KafkaTopic import KafkaTopic
+from src.consumer.shared.enum.KafkaTopic import KafkaTopic
 from src.shared.base.JsonSerializer import JsonSerializer
 
 

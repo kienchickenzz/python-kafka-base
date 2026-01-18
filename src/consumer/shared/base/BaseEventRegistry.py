@@ -12,11 +12,11 @@ import threading
 from abc import ABC, abstractmethod
 from kafka import KafkaConsumer
 
-from src.infrastructure.KafkaConsumerFactory import KafkaConsumerFactory
-from src.infrastructure.DeadLetterPublisher import DeadLetterPublisher
-from src.shared.interface.IEventHandler import IEventHandler
-from src.shared.interface.IDLQHandler import IDLQHandler
-from src.shared.model.DLQMessage import DLQMessage, ErrorInfo
+from src.consumer.infrastructure.KafkaConsumerFactory import KafkaConsumerFactory
+from src.consumer.infrastructure.DeadLetterPublisher import DeadLetterPublisher
+from src.consumer.shared.interface.IEventHandler import IEventHandler
+from src.consumer.shared.interface.IDLQHandler import IDLQHandler
+from src.consumer.shared.model.DLQMessage import DLQMessage, ErrorInfo
 
 
 class BaseEventRegistry(ABC):
@@ -143,6 +143,7 @@ class BaseEventRegistry(ABC):
                     for msg in messages:
                         try:
                             dlq_data = msg.value
+                            # TODO: Validate dlq_data structure with DTO for type safety
                             original_message = dlq_data.get("original_message", {})
                             error_info = dlq_data.get("error_info", {})
                             handler.handle_dlq(original_message, error_info)

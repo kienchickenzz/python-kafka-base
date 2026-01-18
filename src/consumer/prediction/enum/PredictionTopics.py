@@ -1,7 +1,7 @@
 """
 PredictionTopics - Kafka topics cho Prediction domain
 """
-from src.shared.enum.KafkaTopic import KafkaTopic, BaseTopics
+from src.consumer.shared.enum.KafkaTopic import KafkaTopic, BaseTopics
 
 
 class PredictionTopics(BaseTopics):

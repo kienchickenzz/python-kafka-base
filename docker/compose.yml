@@ -6,6 +6,7 @@ services:
         networks:
         - kafka-net
 
+    # TODO: Mount volume để tách biệt lưu trữ dữ liệu Kafka giữa các dự án 
     kafka:
         image: wurstmeister/kafka:latest
         ports:

@@ -8,9 +8,9 @@ Trách nhiệm:
 """
 from kafka import KafkaProducer
 
-from src.shared.enum.KafkaTopic import KafkaTopic
+from src.consumer.shared.enum.KafkaTopic import KafkaTopic
 from src.shared.base.JsonSerializer import JsonSerializer
-from src.shared.model.DLQMessage import DLQMessage
+from src.consumer.shared.model.DLQMessage import DLQMessage
 
 
 class DeadLetterPublisher:

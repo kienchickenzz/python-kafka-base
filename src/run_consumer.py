@@ -5,12 +5,12 @@ Trách nhiệm:
 - Khởi tạo các dependencies (config, factories, publishers)
 - Tạo và chạy registry
 """
-from src.infrastructure.KafkaConfig import KafkaConfig
-from src.infrastructure.KafkaConsumerFactory import KafkaConsumerFactory
-from src.infrastructure.KafkaProducerFactory import KafkaProducerFactory
-from src.infrastructure.DeadLetterPublisher import DeadLetterPublisher
+from src.consumer.infrastructure.KafkaConfig import KafkaConfig
+from src.consumer.infrastructure.KafkaConsumerFactory import KafkaConsumerFactory
+from src.consumer.infrastructure.KafkaProducerFactory import KafkaProducerFactory
+from src.consumer.infrastructure.DeadLetterPublisher import DeadLetterPublisher
 from src.shared.base.JsonSerializer import JsonSerializer
-from src.domains.prediction.consumer.PredictionRegistry import PredictionRegistry
+from src.consumer.prediction.PredictionRegistry import PredictionRegistry
 
 
 def main() -> None:

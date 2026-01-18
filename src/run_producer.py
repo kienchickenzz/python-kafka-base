@@ -18,7 +18,7 @@ def main() -> None:
 
     try:
         # Demo: publish một số events
-        for i in range(3):
+        for i in range(5):
             publisher.create_event({
                 "model_name": "sentiment",
                 "input_text": f"Hello world {i}",

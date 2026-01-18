@@ -29,10 +29,6 @@ class PredictionHandler(IEventHandler):
             dict: Kết quả prediction với keys: request_id, result, confidence
         """
         request_id = data.get("request_id")
-
-        # Mock prediction
-        return {
-            "request_id": request_id,
-            "result": "positive",
-            "confidence": 0.85,
-        }
+        print(f"Processing prediction request: {request_id}")
+        print(f"Model: {data.get('model_name')}")
+        print(f"Input text: {data.get('input_text')[:50]}...")
